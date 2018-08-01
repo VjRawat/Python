@@ -1,18 +1,30 @@
 class BaseClass:
+        firstNumber = 0
+        secondNumber = 0
+        result = 0
 
-    def __init__(self):
-        print("This is base class.")
+        def __init__(self, firstNumber, secondNumber):
 
-    def helloBaseClass(self):
-        print("This is hello function inside the base class.")
+            self.firstNumber = firstNumber
+            self.secondNumber = secondNumber
 
-class DerivedClass(BaseClass):
+        def sumOfTwoNumbers(self):
+            self.result = self.firstNumber + self.secondNumber
+            return self.result
 
-    def __init__(self):
-        super(DerivedClass, self).helloBaseClass()
-        print("This is derived class.")
+class DerivedClass(BaseClass):                                                   # Inherit the Parent class(BaseClass) by child class(DerivedClass)
 
-obj = DerivedClass()
-obj1 = BaseClass()
+    def __init__(self, firstNumber, secondNumber):
+        super(DerivedClass, self).__init__(firstNumber, secondNumber)             # super keyword called the parent class(BaseClass) constructor
+        result = super(DerivedClass, self).sumOfTwoNumbers()
+        print("Then sum of two numbers is: ",result)
 
+        # print(result)
+try:
+    firstNumber = int(input("Enter your first Value: "))
+    secondNumber = int(input("Enter yout second Value: "))
+    obj = DerivedClass(secondNumber=secondNumber, firstNumber=firstNumber)
+
+except ValueError:
+        print("Sorry! Enter the integer Value only.")
 
