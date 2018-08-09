@@ -23,17 +23,17 @@ appLabel = tk.Label(root, text="Student management system", fg="#5a990c", width=
 appLabel.config(font=("sylfaen", 30))
 appLabel.grid(row=0, columnspan=2, padx=(30,30), pady=(30,0))
 
-class student:
-    studentName = ""
-    collegeName = ""
-    phoneNumber = 0
-    address = ""
+# class student:
+#     studentName = ""
+#     collegeName = ""
+#     phoneNumber = 0
+#     address = ""
 
-    def __int__(self, studentName, collegeName, phoneNumber, address):
-        self.studentName = studentName
-        self.collegeName = collegeName
-        self.phoneNumber = phoneNumber
-        self.address =  address
+#     def __int__(self, studentName, collegeName, phoneNumber, address):
+#         self.studentName = studentName
+#         self.collegeName = collegeName
+#         self.phoneNumber = phoneNumber
+#         self.address =  address
 
 nameLabel= tk.Label(root, text="Enter your name", width=40, anchor  ='w')\
         .grid(row=1,column=0, padx=(30, 0), pady=(30,0))
@@ -54,11 +54,11 @@ collegeEntry.grid(row=2, column=1, padx=(0,50), pady = 20)
 phoneEntry.grid(row=3, column=1, padx=(0,50), pady = 20)
 addressEntry.grid(row=4, column=1, padx=(0,50), pady = 20)
 
-username = ""
-collegeName = ""
-phone = ""
-address = ""
-list = []
+# username = ""
+# collegeName = ""
+# phone = ""
+# address = ""
+# list = []
 
 def takeNameInput():
     global nameEntry, collegeEntry, phoneEntry, addressEntry
@@ -85,11 +85,11 @@ def takeNameInput():
 def destroyRootWindow():
     root.destroy()
 
-def printDetails():
-    for singleItem in list:
-        print("Student name is: %s\nCollege name is: %s\nPhone number is: %d\nAddress is: %s" %
-              (singleItem.studentName, singleItem.collegeName, singleItem.phoneNumber, singleItem.address))
-        print("****************************************")
+# def printDetails():
+#     for singleItem in list:
+#         print("Student name is: %s\nCollege name is: %s\nPhone number is: %d\nAddress is: %s" %
+#               (singleItem.studentName, singleItem.collegeName, singleItem.phoneNumber, singleItem.address))
+#         print("****************************************")
 
 button = tk.Button(root, text="Take input", command=takeNameInput)
 button.grid(row=5, column=0, pady=30)
